@@ -90,6 +90,12 @@ class MySlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center (
+          child: Text("Monthly Specials"),
+        ),
+        backgroundColor: Colors.brown,
+      ),
       body: ListView(
         children: [
           CarouselSlider(
