@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      debugShowCheckedModeBanner: false,
-      title: 'Revocup Slider',
+      title: 'Revocup',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,8 +25,60 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      darkTheme: ThemeData.dark(),
-      home: MySlider(),
+
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+
+  @override
+
+  Widget build(BuildContext context) {
+
+   return Material(
+     child: Navbar()
+   );
+
+
+  }
+}
+
+class Navbar extends StatelessWidget {
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    final navbarOptions = <Widget>[
+      const Center(child: Icon(Icons.home, size: 64.0),),
+      const Center(child: Icon(Icons.coffee, size: 64.0),),
+      const Center(child: Icon(Icons.pin_drop, size: 64.0),),
+      const Center(child: Icon(Icons.info, size: 64.0),)
+    ];
+
+    final navbarTab = <Tab>[
+      const Tab(icon: Icon(Icons.home), text: 'Home',),
+      const Tab(icon: Icon(Icons.coffee), text: 'Order',),
+      const Tab(icon: Icon(Icons.pin_drop), text: 'Location',),
+      const Tab(icon: Icon(Icons.info), text: 'Info',),
+    ];
+
+    return DefaultTabController (
+      length: navbarOptions.length,
+      child: Scaffold(
+        appBar: AppBar (
+          title: const Center(
+              child: Text("Revocup Coffee")
+          ),
+          backgroundColor: Colors.brown,
+          bottom: TabBar(
+            tabs: navbarTab,
+          ),
+        ),
+        body: MySlider(),
+      )
     );
   }
 }
@@ -40,9 +90,6 @@ class MySlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page Slider"),
-      ),
       body: ListView(
         children: [
           CarouselSlider(
