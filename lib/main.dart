@@ -1,12 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 
 void main() {
   runApp(const MyApp());
 }
 
+var os = 'Web';
+var themeColor = Colors.blue;
+
+void checkOS() {
+  if (Platform.isAndroid || Platform.isIOS) {
+    os = 'Mobile';
+    themeColor = Colors.brown;
+  } else if (kIsWeb) {
+    themeColor = Colors.amber;
+  }
+    print(os);
+}
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  checkOS() {
+    // TODO: implement checkOS
+    throw UnimplementedError();
+  } //checks the operating system
+
 
   // This widget is the root of your application.
   @override
@@ -23,7 +46,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: themeColor,
       ),
 
       home: MyHomePage(),
@@ -72,7 +95,7 @@ class Navbar extends StatelessWidget {
           title: const Center(
               child: Text("Revocup Coffee")
           ),
-          backgroundColor: Colors.brown,
+          backgroundColor: themeColor,
           bottom: TabBar(
             tabs: navbarTab,
           ),
@@ -93,6 +116,7 @@ class MySlider extends StatelessWidget {
       body: ListView(
         children: [
           CarouselSlider(
+
             items: [
 
               //1st Image of Slider
@@ -159,7 +183,7 @@ class MySlider extends StatelessWidget {
 
             //Slider Container properties
             options: CarouselOptions(
-              height: 500.0,
+              height: 300.0,
               enlargeCenterPage: true,
               autoPlay: true,
               aspectRatio: 16 / 9,
