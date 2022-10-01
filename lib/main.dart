@@ -84,8 +84,9 @@ class Navbar extends StatelessWidget {
 }
 
 class MySlider extends StatelessWidget {
-  const MySlider({super.key});
+  MySlider({super.key});
 
+  final CarouselController buttonController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +101,6 @@ class MySlider extends StatelessWidget {
         children: [
           CarouselSlider(
             items: [
-
               //1st Image of Slider
               Container(
                 margin: EdgeInsets.all(6.0),
@@ -162,22 +162,23 @@ class MySlider extends StatelessWidget {
               ),
 
             ],
+            carouselController: buttonController,
+
 
             //Slider Container properties
             options: CarouselOptions(
               height: 500.0,
               enlargeCenterPage: true,
-              autoPlay: true,
+              autoPlay: false,
               aspectRatio: 16 / 9,
               autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: false,
+              enableInfiniteScroll: true,
               autoPlayAnimationDuration: Duration(milliseconds: 600),
               viewportFraction: 0.8,
             ),
           ),
         ],
       ),
-
     );
   }
 }
