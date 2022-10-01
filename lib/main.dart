@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/rendering.dart';
+import 'package:revocup_flutter/orderPage/itemGrid.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 
@@ -20,18 +22,10 @@ void checkOS() {
   } else if (kIsWeb) {
     themeColor = Colors.amber;
   }
-    print(os);
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  checkOS() {
-    // TODO: implement checkOS
-    throw UnimplementedError();
-  } //checks the operating system
-
 
   // This widget is the root of your application.
   @override
@@ -103,7 +97,21 @@ class Navbar extends StatelessWidget {
             tabs: navbarTab,
           ),
         ),
-        body: const MySlider(),
+        body: Center(
+          child: Column(
+            children: [
+              Container(
+                height: 300.0,
+                child: const MySlider(),
+              ),
+              Container(
+                height: 400.0,
+                child: const ItemGrid(),
+              )
+            ],
+          ),
+        )
+
       )
     );
   }
