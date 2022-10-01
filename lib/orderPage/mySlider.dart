@@ -14,6 +14,7 @@ class MySlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: ListView(
         children: [
           CarouselSlider(

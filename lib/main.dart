@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/rendering.dart';
-import 'package:revocup_flutter/orderPage/itemGrid.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 
@@ -45,18 +44,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: themeColor,
       ),
 
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
 
   @override
 
   Widget build(BuildContext context) {
 
-   return Material(
+   return const Material(
      child: Navbar()
    );
 
@@ -65,6 +66,8 @@ class MyHomePage extends StatelessWidget {
 }
 
 class Navbar extends StatelessWidget {
+  const Navbar({super.key});
+
 
 
 
@@ -87,7 +90,7 @@ class Navbar extends StatelessWidget {
     return DefaultTabController (
       length: navbarOptions.length,
       child: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.white24,
         appBar: AppBar (
           title: const Center(
               child: Text("Revocup Coffee")
@@ -97,24 +100,39 @@ class Navbar extends StatelessWidget {
             tabs: navbarTab,
           ),
         ),
-        body: Center(
+        body: const OrderColumn()
+
+      )
+    );
+  }
+}
+
+class OrderColumn extends StatelessWidget {
+  const OrderColumn({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+        child: Center(
           child: Column(
             children: [
-              Container(
+              const SizedBox(
                 height: 300.0,
                 child: const MySlider(),
               ),
               Container(
+                margin: const EdgeInsets.only(top: 20, bottom: 20),
                 height: 400.0,
                 child: const ItemGrid(),
               )
             ],
           ),
         )
-
-      )
     );
   }
 }
+
+
 
 
