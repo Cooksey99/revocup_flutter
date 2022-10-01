@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 
@@ -29,6 +30,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return MaterialApp(
       title: 'Revocup',
       theme: ThemeData(
