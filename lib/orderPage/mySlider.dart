@@ -29,6 +29,7 @@ class MySlider extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           children: [
             CarouselSlider(
+
               items: [
 
                 //1st Image of Slider
@@ -100,13 +101,14 @@ class MySlider extends StatelessWidget {
 
               //Slider Container properties
               options: CarouselOptions(
+
                 height: 300.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 2000),
+                autoPlayAnimationDuration: Duration(milliseconds: 4000),
                 viewportFraction: 0.8,
               ),
             ),

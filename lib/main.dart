@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: themeColor,
       ),
 
-      home: const MyHomePage(),
+      home: const MyHomePage()
     );
   }
 }
@@ -124,7 +124,7 @@ class OrderColumn extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       children: <Widget>[
         Container (
-          height: 380,
+          height: 350,
           child: MySlider(),
         ),
         Container (
