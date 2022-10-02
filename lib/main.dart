@@ -1,5 +1,6 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/rendering.dart';
@@ -121,12 +122,12 @@ class OrderColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(8),
-      children: const <Widget>[
-        SizedBox(
-          height: 350,
+      children: <Widget>[
+        Container (
+          height: 380,
           child: MySlider(),
         ),
-        SizedBox(
+        Container (
           height: 350,
           child: ItemGrid()
         ),
