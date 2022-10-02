@@ -121,7 +121,7 @@ class OrderColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(8),
+      // padding: const EdgeInsets.all(8),
       children: <Widget>[
         Container (
           height: 350,
