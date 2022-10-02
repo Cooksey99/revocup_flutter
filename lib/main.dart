@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 
@@ -20,22 +22,19 @@ void checkOS() {
   } else if (kIsWeb) {
     themeColor = Colors.amber;
   }
-    print(os);
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  checkOS() {
-    // TODO: implement checkOS
-    throw UnimplementedError();
-  } //checks the operating system
-
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return MaterialApp(
       title: 'Revocup',
       theme: ThemeData(
@@ -51,18 +50,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: themeColor,
       ),
 
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
 
   @override
 
   Widget build(BuildContext context) {
 
-   return Material(
+   return const Material(
      child: Navbar()
    );
 
@@ -71,6 +72,8 @@ class MyHomePage extends StatelessWidget {
 }
 
 class Navbar extends StatelessWidget {
+  const Navbar({super.key});
+
 
 
 
@@ -93,7 +96,7 @@ class Navbar extends StatelessWidget {
     return DefaultTabController (
       length: navbarOptions.length,
       child: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.white24,
         appBar: AppBar (
           title: const Center(
               child: Text("Revocup Coffee")
@@ -103,108 +106,35 @@ class Navbar extends StatelessWidget {
             tabs: navbarTab,
           ),
         ),
-        body: MySlider(),
+        body: const OrderColumn()
+
       )
     );
   }
 }
 
-class MySlider extends StatelessWidget {
-  MySlider({super.key});
+class OrderColumn extends StatelessWidget {
+  const OrderColumn({super.key});
 
-  final CarouselController buttonController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center (
-          child: Text("Monthly Specials"),
+    return ListView(
+      padding: const EdgeInsets.all(8),
+      children: const <Widget>[
+        SizedBox(
+          height: 350,
+          child: MySlider(),
         ),
-        backgroundColor: Colors.brown,
-      ),
-      body: ListView(
-        children: [
-          CarouselSlider(
-            items: [
-              //1st Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: NetworkImage("https://th.bing.com/th/id/OIP.dGfYmE04X6VK1WwnHeDBMQHaE7?pid=ImgDet&w=640&h=426&rs=1"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              //2nd Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: NetworkImage("https://th.bing.com/th/id/OIP.F2gW9t-PpM6DPLMXZkU_OwHaEo?pid=ImgDet&rs=1"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              //3rd Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: NetworkImage("https://images1.persgroep.net/rcs/U-cxKsPBTLkTuTxqB75ry-iRilE/diocontent/148982786/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.9"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              //4th Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: NetworkImage("https://th.bing.com/th/id/OIP.aeiuPcAwbqIcTQFeK_BQWQHaE7?pid=ImgDet&w=500&h=333&rs=1"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              //5th Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: NetworkImage("https://th.bing.com/th/id/OIP.T98IV7uqKjMscVaHKpc6ZAHaEK?pid=ImgDet&w=1920&h=1079&rs=1"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-            ],
-            carouselController: buttonController,
-
-
-            //Slider Container properties
-            options: CarouselOptions(
-              height: 500.0,
-              enlargeCenterPage: true,
-              autoPlay: false,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 600),
-              viewportFraction: 0.8,
-            ),
-          ),
-        ],
-      ),
+        SizedBox(
+          height: 350,
+          child: ItemGrid()
+        ),
+      ],
     );
   }
 }
+
+
+
+

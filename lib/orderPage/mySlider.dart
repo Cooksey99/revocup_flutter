@@ -1,6 +1,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:revocup_flutter/orderPage/itemGrid.dart';
 
 void main() {
   runApp(const MySlider());
@@ -13,7 +14,9 @@ class MySlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: ListView(
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           CarouselSlider(
 
@@ -89,7 +92,7 @@ class MySlider extends StatelessWidget {
               aspectRatio: 16 / 9,
               autoPlayCurve: Curves.fastOutSlowIn,
               enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 600),
+              autoPlayAnimationDuration: Duration(milliseconds: 2000),
               viewportFraction: 0.8,
             ),
           ),
