@@ -119,22 +119,18 @@ class OrderColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 300.0,
-                child: const MySlider(),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20, bottom: 20),
-                height: 400.0,
-                child: const ItemGrid(),
-              )
-            ],
-          ),
-        )
+    return ListView(
+      padding: const EdgeInsets.all(8),
+      children: const <Widget>[
+        SizedBox(
+          height: 350,
+          child: MySlider(),
+        ),
+        SizedBox(
+          height: 350,
+          child: ItemGrid()
+        ),
+      ],
     );
   }
 }

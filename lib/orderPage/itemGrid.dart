@@ -9,6 +9,7 @@ class ItemGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+      physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
       ),

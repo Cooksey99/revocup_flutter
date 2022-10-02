@@ -16,6 +16,7 @@ class MySlider extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: ListView(
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           CarouselSlider(
 
