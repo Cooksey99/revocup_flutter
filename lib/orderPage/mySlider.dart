@@ -10,18 +10,18 @@ void main() {
 const imgShadow = [
   BoxShadow(
       color: Colors.black,
-      spreadRadius: 4,
-      blurRadius: 10,
-      offset: Offset(0, .8)
+      spreadRadius: 5,
+      blurRadius: 9,
+      offset: Offset(0, .6)
   )
 ];
 
 class MySlider extends StatelessWidget {
   const MySlider({super.key});
 
-
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -34,7 +34,7 @@ class MySlider extends StatelessWidget {
 
                 //1st Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -47,7 +47,7 @@ class MySlider extends StatelessWidget {
 
                 //2nd Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -60,7 +60,7 @@ class MySlider extends StatelessWidget {
 
                 //3rd Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -73,7 +73,7 @@ class MySlider extends StatelessWidget {
 
                 //4th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -86,7 +86,7 @@ class MySlider extends StatelessWidget {
 
                 //5th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -102,7 +102,7 @@ class MySlider extends StatelessWidget {
               //Slider Container properties
               options: CarouselOptions(
 
-                height: 300.0,
+                height: 280.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,

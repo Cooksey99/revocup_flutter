@@ -13,17 +13,17 @@ void main() {
   runApp(const MyApp());
 }
 
-var os = 'Web';
+// var os = 'Web';
 var themeColor = Colors.blue;
 
-void checkOS() {
-  if (Platform.isAndroid || Platform.isIOS) {
-    os = 'Mobile';
-    themeColor = Colors.brown;
-  } else if (kIsWeb) {
-    themeColor = Colors.amber;
-  }
-}
+// void checkOS() {
+//   if (Platform.isAndroid || Platform.isIOS) {
+//     os = 'Mobile';
+//     themeColor = Colors.brown;
+//   } else if (kIsWeb) {
+//     themeColor = Colors.amber;
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -121,16 +121,40 @@ class OrderColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      // padding: const EdgeInsets.all(8),
       children: <Widget>[
         Container (
-          height: 350,
+          // padding: const EdgeInsets.only(top: 10),
+          height: 300,
           child: MySlider(),
         ),
-        Container (
-          height: 350,
-          child: ItemGrid()
-        ),
+        Container(
+          height: 500,
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
+              Container(
+                child: AppBar(
+                  backgroundColor: Colors.red,
+                  title: Center(child: Text('Popular Drinks')),
+                ),
+              ),
+              Container(
+                  height: 350,
+                  child: ItemGrid()
+              ),
+              Container(
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.red),
+                    foregroundColor: MaterialStateProperty.all(Colors.white)
+                  ),
+                  onPressed: () {},
+                  child: Text("See More"),
+                ),
+              )
+            ],
+          )
+        )
       ],
     );
   }
