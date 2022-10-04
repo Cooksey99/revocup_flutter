@@ -1,4 +1,9 @@
 
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:revocup_flutter/orderPage/itemGrid.dart';
@@ -43,6 +48,17 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //2nd Image of Slider
@@ -55,6 +71,17 @@ class MySlider extends StatelessWidget {
                       image: NetworkImage("https://th.bing.com/th/id/OIP.F2gW9t-PpM6DPLMXZkU_OwHaEo?pid=ImgDet&rs=1"),
                       fit: BoxFit.cover,
                     ),
+                  ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
                   ),
                 ),
 
@@ -69,6 +96,17 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //4th Image of Slider
@@ -82,6 +120,17 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //5th Image of Slider
@@ -94,6 +143,17 @@ class MySlider extends StatelessWidget {
                       image: NetworkImage("https://th.bing.com/th/id/OIP.T98IV7uqKjMscVaHKpc6ZAHaEK?pid=ImgDet&w=1920&h=1079&rs=1"),
                       fit: BoxFit.cover,
                     ),
+                  ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
                   ),
                 ),
 

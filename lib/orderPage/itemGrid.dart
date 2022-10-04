@@ -10,6 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:revocup_flutter/orderPage/mySlider.dart';
 
+
 class ItemGrid extends StatelessWidget {
   const ItemGrid({super.key});
 
@@ -19,7 +20,6 @@ class ItemGrid extends StatelessWidget {
 
 
     return Container(
-      color: Colors.brown,
       child: GridView(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
