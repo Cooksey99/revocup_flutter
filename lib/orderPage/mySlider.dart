@@ -1,4 +1,9 @@
 
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:revocup_flutter/orderPage/itemGrid.dart';
@@ -10,18 +15,18 @@ void main() {
 const imgShadow = [
   BoxShadow(
       color: Colors.black,
-      spreadRadius: 4,
-      blurRadius: 10,
-      offset: Offset(0, .8)
+      spreadRadius: 5,
+      blurRadius: 9,
+      offset: Offset(0, .6)
   )
 ];
 
 class MySlider extends StatelessWidget {
   const MySlider({super.key});
 
-
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -29,11 +34,12 @@ class MySlider extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           children: [
             CarouselSlider(
+
               items: [
 
                 //1st Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -42,11 +48,22 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //2nd Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -55,11 +72,22 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //3rd Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -68,11 +96,22 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //4th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -81,11 +120,22 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
                 //5th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     boxShadow: imgShadow,
                     borderRadius: BorderRadius.circular(8.0),
@@ -94,19 +144,31 @@ class MySlider extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  child: Center(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text("Drink Name \n\n Creamy and spiced, with perfectly smooth shots of espresso", style: TextStyle(fontWeight: FontWeight.bold),).frosted(
+                      frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+                    ),
+                    )
+                  ),
                 ),
 
               ],
 
               //Slider Container properties
               options: CarouselOptions(
-                height: 300.0,
+
+                height: 280.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 2000),
+                autoPlayAnimationDuration: Duration(milliseconds: 4000),
                 viewportFraction: 0.8,
               ),
             ),
