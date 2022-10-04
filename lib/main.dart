@@ -6,8 +6,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -49,7 +47,6 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: themeColor,
       ),
-
       home: const MyHomePage(),
     );
   }
@@ -58,64 +55,97 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-
   @override
-
   Widget build(BuildContext context) {
-
-   return const Material(
-     child: Navbar()
-   );
-
-
+    return const Material(child: Navbar());
   }
 }
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
 
-
-
-
   @override
   Widget build(BuildContext context) {
-    final navbarOptions = <Widget>[
-      const Center(child: Icon(Icons.home, size: 64.0),),
-      const Center(child: Icon(Icons.coffee, size: 64.0),),
-      const Center(child: Icon(Icons.pin_drop, size: 64.0),),
-      const Center(child: Icon(Icons.info, size: 64.0),)
+    final navbarOptions = <
+        Widget
+    >[
+      Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),
+              );
+            },
+            child: Icon(Icons.home, size: 64.0)),
+      ),
+      Center(
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => new OrderPage()),
+                );
+              },
+              child: Icon(Icons.coffee, size: 64.0),
+          )
+      ),
+      Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),
+              );
+            },
+            child: Icon(Icons.pin_drop, size: 64.0)),
+      ),
+      Center(
+        child: ElevatedButton(onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()),
+          );
+        }, child: Icon(Icons.info, size: 64.0),),
+      )
     ];
 
     final navbarTab = <Tab>[
-      const Tab(icon: Icon(Icons.home), text: 'Home',),
-      const Tab(icon: Icon(Icons.coffee), text: 'Order',),
-      const Tab(icon: Icon(Icons.pin_drop), text: 'Location',),
-      const Tab(icon: Icon(Icons.info), text: 'Info',),
+      const Tab(
+        icon: Icon(Icons.home),
+        text: 'Home',
+      ),
+      const Tab(
+        icon: Icon(Icons.coffee),
+        text: 'Order',
+      ),
+      const Tab(
+        icon: Icon(Icons.pin_drop),
+        text: 'Location',
+      ),
+      const Tab(
+        icon: Icon(Icons.info),
+        text: 'Info',
+      ),
     ];
 
-    return DefaultTabController (
-      length: navbarOptions.length,
-      child: Scaffold(
-        backgroundColor: Colors.white24,
-        appBar: AppBar (
-          title: const Center(
-              child: Text("Revocup Coffee")
-          ),
-          backgroundColor: Colors.red,
-          bottom: TabBar(
-            tabs: navbarTab,
-          ),
-        ),
-        body: const OrderColumn()
-
-      )
-    );
+    return DefaultTabController(
+        length: navbarOptions.length,
+        child: Scaffold(
+            backgroundColor: Colors.white24,
+            appBar: AppBar(
+              title: const Center(child: Text("Revocup Coffee")),
+              backgroundColor: Colors.red,
+              bottom: TabBar(
+                tabs: navbarTab,
+              ),
+            ),
+            body: const OrderColumn()));
   }
 }
 
 class OrderColumn extends StatelessWidget {
   const OrderColumn({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -134,11 +164,6 @@ class OrderColumn extends StatelessWidget {
               )
             ],
           ),
-        )
-    );
+        ));
   }
 }
-
-
-
-
