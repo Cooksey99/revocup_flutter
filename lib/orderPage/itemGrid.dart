@@ -1,9 +1,14 @@
 
 
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
+import 'package:blur/blur.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:revocup_flutter/orderPage/mySlider.dart';
-
 
 class ItemGrid extends StatelessWidget {
   const ItemGrid({super.key});
@@ -11,6 +16,8 @@ class ItemGrid extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+
+
     return Container(
       color: Colors.brown,
       child: GridView(
@@ -30,7 +37,15 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
+          ,
           Container(
             height: 80.0,
             margin: EdgeInsets.all(15.0),
@@ -42,7 +57,15 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
+          ,
           Container(
             height: 80.0,
             margin: EdgeInsets.all(15.0),
@@ -54,7 +77,15 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
+          ,
           Container(
             height: 80.0,
             margin: EdgeInsets.all(15.0),
@@ -66,7 +97,15 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
+          ,
           Container(
             height: 80.0,
             margin: const EdgeInsets.all(15.0),
@@ -78,7 +117,15 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
+          ,
           Container(
             height: 80.0,
             margin: EdgeInsets.all(15.0),
@@ -90,7 +137,14 @@ class ItemGrid extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          )
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text("Drink Name", style: TextStyle(fontWeight: FontWeight.bold,),).frosted(
+              frostColor: Colors.white,
+              blur: .6,
+              borderRadius: BorderRadius.circular(6),
+              padding: EdgeInsets.all(6)
+            ),),)
       ],
     ));
   }

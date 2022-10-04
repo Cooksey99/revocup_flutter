@@ -139,7 +139,7 @@ class OrderColumn extends StatelessWidget {
                 ),
               ),
               Container(
-                  height: 350,
+                  height: 300,
                   child: ItemGrid()
               ),
               Container(
