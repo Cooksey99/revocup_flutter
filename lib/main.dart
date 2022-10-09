@@ -72,7 +72,7 @@ class Navbar extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => new MyApp()),
               );
             },
             child: Icon(Icons.home, size: 64.0)),
@@ -93,7 +93,7 @@ class Navbar extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => new MyApp()),
               );
             },
             child: Icon(Icons.pin_drop, size: 64.0)),
@@ -102,7 +102,7 @@ class Navbar extends StatelessWidget {
         child: ElevatedButton(onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MyApp()),
+            MaterialPageRoute(builder: (context) => new MyApp()),
           );
         }, child: Icon(Icons.info, size: 64.0),),
       )
@@ -138,7 +138,14 @@ class Navbar extends StatelessWidget {
                 tabs: navbarTab,
               ),
             ),
-            body: const OrderColumn()));
+            body: const TabBarView(
+              children: [
+                OrderColumn(),
+                OrderPage(),
+                OrderColumn(),
+                OrderColumn()
+              ],
+            )));
   }
 }
 
