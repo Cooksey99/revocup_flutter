@@ -131,26 +131,35 @@ class OrderColumn extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 Container(
-                  child: AppBar(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.red,
-                    title: Center(child: Text('Popular Drinks')),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(8))
+                      ),
+                      width: 200,
+                      height: 50,
+                      child: Center(child: Text('Popular Drinks', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),)),
+                    ),
                   ),
-                ),
+                  ),
                 Container(height: 300, child: ItemGrid()),
                 Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8))
+                  ),
                     child: Center(
                   child: TextButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.red),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white)),
+                        foregroundColor: MaterialStateProperty.all(Colors.black)),
                     onPressed: () {},
                     child: Container(
                         width: 100,
                         height: 25,
                         child: Center(
-                          child: Text("See More"),
+                          child: Text("See More", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                         )),
                   ),
                 ))
