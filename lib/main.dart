@@ -118,54 +118,60 @@ class OrderColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Container(
-          // padding: const EdgeInsets.only(top: 10),
-          height: 300,
-          child: MySlider(),
-        ),
-        Container(
-            height: 500,
-            child: ListView(
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                Container(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(8))
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: [Colors.white, Colors.white, Colors.brown, Colors.brown], stops: [0, 0.4, 0.75, 1], begin: Alignment.topCenter, end: Alignment.bottomCenter)
+      ),
+      child: ListView(
+        children: <Widget>[
+          Container(
+            // padding: const EdgeInsets.only(top: 10),
+            height: 300,
+            child: MySlider(),
+          ),
+          Container(
+
+              height: 500,
+              child: ListView(
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  Container(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(Radius.circular(8))
+                        ),
+                        width: 200,
+                        height: 50,
+                        child: Center(child: Text('Popular Drinks', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),)),
                       ),
-                      width: 200,
-                      height: 50,
-                      child: Center(child: Text('Popular Drinks', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),)),
                     ),
                   ),
-                  ),
-                Container(height: 300, child: ItemGrid()),
-                Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8))
-                  ),
-                    child: Center(
-                  child: TextButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
-                        foregroundColor: MaterialStateProperty.all(Colors.black)),
-                    onPressed: () {},
-                    child: Container(
-                        width: 100,
-                        height: 25,
-                        child: Center(
-                          child: Text("See More", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                        )),
-                  ),
-                ))
-              ],
-            ))
-      ],
+                  Container(height: 300, child: ItemGrid()),
+                  Container(
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8))
+                      ),
+                      child: Center(
+                        child: TextButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.red),
+                              foregroundColor: MaterialStateProperty.all(Colors.black)),
+                          onPressed: () {},
+                          child: Container(
+                              width: 100,
+                              height: 25,
+                              child: Center(
+                                child: Text("See More", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                              )),
+                        ),
+                      ))
+                ],
+              ))
+        ],
+      ),
     );
   }
 }
