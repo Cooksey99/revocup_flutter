@@ -68,43 +68,16 @@ class Navbar extends StatelessWidget {
         Widget
     >[
       Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => new MyApp()),
-              );
-            },
-            child: Icon(Icons.home, size: 64.0)),
+        child: Icon(Icons.home, size: 64.0),
       ),
       Center(
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => new OrderPage()),
-                );
-              },
-              child: Icon(Icons.coffee, size: 64.0),
-          )
+          child:  Icon(Icons.coffee, size: 64.0),
       ),
       Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => new MyApp()),
-              );
-            },
-            child: Icon(Icons.pin_drop, size: 64.0)),
+        child:  Icon(Icons.pin_drop, size: 64.0),
       ),
       Center(
-        child: ElevatedButton(onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => new MyApp()),
-          );
-        }, child: Icon(Icons.info, size: 64.0),),
+        child:  Icon(Icons.info, size: 64.0),
       )
     ];
 
