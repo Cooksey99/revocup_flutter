@@ -168,7 +168,7 @@ class MySlider extends StatelessWidget {
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 4000),
+                autoPlayAnimationDuration: const Duration(milliseconds: 4000),
                 viewportFraction: 0.8,
               ),
             ),
