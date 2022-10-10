@@ -64,18 +64,47 @@ class Navbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navbarOptions = <Widget>[
-      const Center(
-        child: Icon(Icons.home, size: 64.0),
+    final navbarOptions = <
+        Widget
+    >[
+      Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => new MyApp()),
+              );
+            },
+            child: Icon(Icons.home, size: 64.0)),
       ),
-      const Center(
-        child: Icon(Icons.coffee, size: 64.0),
+      Center(
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => new OrderPage()),
+                );
+              },
+              child: Icon(Icons.coffee, size: 64.0),
+          )
       ),
-      const Center(
-        child: Icon(Icons.pin_drop, size: 64.0),
+      Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => new MyApp()),
+              );
+            },
+            child: Icon(Icons.pin_drop, size: 64.0)),
       ),
-      const Center(
-        child: Icon(Icons.info, size: 64.0),
+      Center(
+        child: ElevatedButton(onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => new MyApp()),
+          );
+        }, child: Icon(Icons.info, size: 64.0),),
       )
     ];
 
@@ -109,7 +138,14 @@ class Navbar extends StatelessWidget {
                 tabs: navbarTab,
               ),
             ),
-            body: const OrderColumn()));
+            body: const TabBarView(
+              children: [
+                OrderColumn(),
+                OrderPage(),
+                OrderColumn(),
+                OrderColumn()
+              ],
+            )));
   }
 }
 
