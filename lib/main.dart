@@ -64,9 +64,7 @@ class Navbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navbarOptions = <
-        Widget
-    >[
+    final navbarOptions = <Widget>[
       Center(
         child: Icon(Icons.home, size: 64.0),
       ),
