@@ -3,6 +3,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:revocup_flutter/footerPage/footer.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 void main() {
@@ -116,7 +117,25 @@ class Navbar extends StatelessWidget {
                 OrderColumn(),
                 OrderColumn()
               ],
-            )));
+            ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.holiday_village),
+                label: 'village',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.h_mobiledata),
+                label: 'mobile',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.contact_mail),
+                label: 'Mail',
+              ),
+            ],
+            selectedItemColor: Colors.amber[800],
+          ),
+        ));
   }
 }
 
@@ -174,9 +193,10 @@ class OrderColumn extends StatelessWidget {
                                 child: Text("See More", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                               )),
                         ),
-                      ))
+                      )),
                 ],
-              ))
+              )
+          )
         ],
       ),
     );
