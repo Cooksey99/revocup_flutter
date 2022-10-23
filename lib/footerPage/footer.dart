@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:revocup_flutter/orderPage/orderPage.dart';
 
 void main() {
-  runApp(const MySlider());
+  runApp(const MyFooter());
 }
 
 const imgShadow = [
@@ -16,16 +16,19 @@ const imgShadow = [
   )
 ];
 
-class MySlider extends StatelessWidget {
-  const MySlider({super.key});
+class MyFooter extends StatelessWidget {
+  const MyFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: Container(
-        )
+        bottomNavigationBar: Container(padding: const EdgeInsets.all(8.0),
+          color: Colors.blue,
+          alignment: Alignment.center,
+          child: Text("Footer"),
+        ),
 
     );
   }
